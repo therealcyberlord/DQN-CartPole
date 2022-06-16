@@ -17,4 +17,5 @@ Results from training 1000 episodes:
 Consulted Sources:
 
 Aurelion Geron's "Hands-On Machine Learning with Scikit-Learn, Keras & Tensorflow"
+<br>
 Eugenia Anello's Medium Article: https://towardsdatascience.com/deep-q-network-with-pytorch-and-gym-to-solve-acrobot-game-d677836bda9b
