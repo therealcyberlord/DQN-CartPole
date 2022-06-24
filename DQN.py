@@ -16,6 +16,8 @@ class DQN(nn.Module):
         self.linear = Sequential(
             Linear(input_shape, 32),
             ELU(),
+            Linear(64, 32),
+            ELU(),
             Linear(32, 32),
             ELU(),
             Linear(32, output_shape)
@@ -24,18 +26,6 @@ class DQN(nn.Module):
     def forward(self, x):
         x = x.to(device)
         return self.linear(x)
-
-
-# exploration vs. exploitation, we want to randomly explore with the probability epsilon 
-
-def epsilon_greedy(model, state, epsilon):
-    if np.random.rand() < epsilon:
-        return Main.env.action_space.sample()
-    else:
-        with torch.no_grad:
-            model.eval()
-            Q_values = model(state[np.newaxis])
-            return np.argmax(Q_values[0])
 
     
 
