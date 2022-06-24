@@ -1,6 +1,5 @@
 from collections import deque 
 import random
-import torch 
 
 class ReplayMemory(object):
     def __init__(self, capacity):
